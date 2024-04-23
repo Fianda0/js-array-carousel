@@ -20,5 +20,9 @@ for (let i = 0; i < slide.length; i++) {
         imgActive = i;
 
     }
-
 }
+
+// seleziono la prossima slide da attivare
+slideNext = imgActive + 1;
+
+slide[slideNext].classList.add('active')
