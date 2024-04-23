@@ -66,11 +66,8 @@ document.getElementById('back').addEventListener('click', function () {
 
     // se mi trovo all'ulitma slide torno alla prima
     if (slideNext == -1) {
-        slideNext = slide.length;
+        slideNext = slide.length - 1;
     }
-    console.log('lunghezza array', slide.length)
-    console.log(slideNext)
-    console.log(slideNext[slide.length])
 
     slide[slideNext].classList.add('active')
 
