@@ -3,7 +3,8 @@ let slideNext;
 
 // Creazione array con immagine delle slide
 let slide = document.getElementsByClassName('slide');
-console.log(slide)
+let slideLateral = document.getElementsByClassName('slide-lateral');
+
 
 // inserisco bottone per passare alla prossima slide
 document.getElementById('next').addEventListener('click', function () {
@@ -13,12 +14,14 @@ document.getElementById('next').addEventListener('click', function () {
     for (let i = 0; i < slide.length; i++) {
 
         const slideControl = slide[i]
-        console.log(slideControl)
+        const slideL = slideLateral[i]
 
         // controllo slide se hanno la classe active
         if (slideControl.classList.contains('active')) {
             // se contine ACTIVE lo rimuovo
             slideControl.classList.remove('active')
+            slideL.classList.remove('active', 'border-lateral')
+
 
             // segno quale array ha la classe ACTIVE
             imgActive = i;
@@ -35,6 +38,8 @@ document.getElementById('next').addEventListener('click', function () {
     }
 
     slide[slideNext].classList.add('active')
+    slideLateral[slideNext].classList.add('active', 'border-lateral')
+
 
 })
 
@@ -47,12 +52,15 @@ document.getElementById('back').addEventListener('click', function () {
     for (let i = 0; i < slide.length; i++) {
 
         const slideControl = slide[i]
-        console.log(slideControl)
+        const slideL = slideLateral[i]
+
 
         // controllo slide se hanno la classe active
         if (slideControl.classList.contains('active')) {
             // se contine ACTIVE lo rimuovo
             slideControl.classList.remove('active')
+            slideL.classList.remove('active', 'border-lateral')
+
 
             // segno quale array ha la classe ACTIVE
             imgActive = i;
@@ -70,5 +78,7 @@ document.getElementById('back').addEventListener('click', function () {
     }
 
     slide[slideNext].classList.add('active')
+    slideLateral[slideNext].classList.add('active', 'border-lateral')
 
 })
+

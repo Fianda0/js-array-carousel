@@ -29,13 +29,23 @@ body {
     height: calc(100% / 5);
     object-fit: cover;
     object-position: center;
+
 }
 
 .slide {
     display: none;
 }
 
+.slide-lateral {
+    opacity: 0.2;
+}
+
+.border-lateral {
+    border: 2px solid white;
+}
+
 .active {
+    opacity: 1;
     display: block;
 }
 
