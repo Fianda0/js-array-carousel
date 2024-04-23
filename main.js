@@ -5,30 +5,37 @@ let slideNext;
 let slide = document.getElementsByClassName('slide');
 console.log(slide)
 
-// Inizio ciclo for per controllare le immagini
-for (let i = 0; i < slide.length; i++) {
+// inserisco bottone per passare alla prossima slide
+document.getElementById('next').addEventListener('click', function () {
 
-    const slideControl = slide[i]
-    console.log(slideControl)
 
-    // controllo slide se hanno la classe active
-    if (slideControl.classList.contains('active')) {
-        // se contine ACTIVE lo rimuovo
-        slideControl.classList.remove('active')
+    // Inizio ciclo for per controllare le immagini
+    for (let i = 0; i < slide.length; i++) {
 
-        // segno quale array ha la classe ACTIVE
-        imgActive = i;
+        const slideControl = slide[i]
+        console.log(slideControl)
 
+        // controllo slide se hanno la classe active
+        if (slideControl.classList.contains('active')) {
+            // se contine ACTIVE lo rimuovo
+            slideControl.classList.remove('active')
+
+            // segno quale array ha la classe ACTIVE
+            imgActive = i;
+
+        }
     }
-}
 
-// seleziono la prossima slide da attivare
-slideNext = imgActive + 1;
+    // seleziono la prossima slide da attivare
+    slideNext = imgActive + 1;
 
-if (slideNext == slide.length) {
-    slideNext = 0;
-}
+    // se mi trovo all'ulitma slide torno alla prima
+    if (slideNext == slide.length) {
+        slideNext = 0;
+    }
 
-slide[slideNext].classList.add('active')
+    slide[slideNext].classList.add('active')
+
+})
 
 
