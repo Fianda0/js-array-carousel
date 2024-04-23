@@ -29,3 +29,11 @@ body {
     object-fit: cover;
     object-position: center;
 }
+
+.slide {
+    display: none;
+}
+
+.active {
+    display: block;
+}
