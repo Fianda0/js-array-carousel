@@ -4,6 +4,28 @@
     box-sizing: border-box;
 }
 
+
+
 body {
+    background-color: #222;
+    color: white;
     font-family: sans-serif;
+}
+
+.principale img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.preview {
+    height: 25rem;
+}
+
+.preview img {
+    width: 100%;
+    height: calc(100% / 5);
+    object-fit: cover;
+    object-position: center;
 }
